@@ -15,21 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from diaryApp import views
+import MyPage.views
 from django.conf import settings
-from django.conf.urls.static import static
+from 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("registration/signup", views.signup, name='signup'),
-    path("registration/login", views.login, name='login'),
-    path("registration/logout", views.logout, name='logout'),
-    path('index', views.index, name='index'),
-    path('mypage', include('MyPage.urls')),
-]
 
-if settings.DEBUG: 
-    urlpatterns += static(
-        settings.MEDIA_URL, 
-        document_root = settings.MEDIA_ROOT
-    )
+    path('', MyPage.views.mypage, name='mypage'),
+]
