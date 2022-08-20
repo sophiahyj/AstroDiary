@@ -16,18 +16,8 @@
         {% if user.is_authenticated %}
         <input id="username" value={{user.username}} style="display:none;"></input>
         <span class="navbar_menu_item">안녕하세요!, {{user.username}} 님!</span>
+        <!-- <img class="profile_pic" src="{{request.user.profile.profile_pic.url}}"> -->
         <a href="{% url 'logout' %}">Logout</a>
-        {% else %}
-        <li class="navbar_menu_item">
-            <a href="{% url 'login' %}">Login</a>
-        </li>
-        <li class="navbar_menu_item">
-            <a href="{% url 'signup' %}">Sign Up</a>
-        </li>
-        {% endif %}
-    </div>
-    <!-- 여기부터 모달입니당 -->
-  
         <div class="modal-container">
           <div class="modal">
             <div class="modal-header">
@@ -43,14 +33,7 @@
                     <span></span><br>
                     <input id="todo" name="todo"/>
                     <button type="button" id="add-button">+</button>
-                    <ul id="todo-list"></ul>
-                    <!-- <button type='button' id="delete-button">delete</button> -->
-                    <!-- <script>
-                        const deleteButton = document.querySelector('#delete-button')
-                        let tododelete = document.getElementById('todo-list');
-                        tododelete.removeChild((tododelete.lastElementChild).nodeType);
-                        deleteButton.addEventListener('click', tododelete)
-                    </script> -->
+                    <div id="todo-list"></div>
                     <h1>your diary</h1>
                     <input type="text" id="content" name="content" placeholder="일기를 적어주세요.">
                     <button>등록</button>
@@ -97,6 +80,13 @@
                 })
               })
         </script>
-  
+        {% else %}
+        <div class="btn">
+          <button href="{% url 'login' %}">Login</button>
+          <br>
+          <br>
+          <button href="{% url 'signup' %}">Sign Up</button>
+        </div>
+        {% endif %}
     </div>
 {% endblock content %}

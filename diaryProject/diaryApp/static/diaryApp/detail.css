@@ -1,0 +1,25 @@
+.container {
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(180deg, #6F46A7 0%, #896AC9 33.85%, #C99DDD 91.15%);
+    position: relative;
+}
+
+h1 {
+    position: absolute;
+}
+
+.outer {
+    position: relative;
+}
+
+.todo_list {
+    font-family: 'Noto Serif KR', serif;
+    color: #28104E;
+    font-size: 20px;
+    font-weight: bolder;
+    position: absolute;
+    top: 110px;
+}
