@@ -22,7 +22,7 @@ body {
   position: relative;
 }
 
-button {
+.btn_register button {
   width: 246px;
   height: 57px;
   left: 68px;

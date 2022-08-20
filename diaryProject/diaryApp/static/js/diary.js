@@ -41,12 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
           // 제거하기 버튼 클릭 이벤트 리스너
             deleteButton.addEventListener('click', (event) => {
-<<<<<<< HEAD
-                todoSendList.
-=======
                 todoSendList.pop()
                 console.log(todoSendList)
->>>>>>> 3fec5cb4c0bf22d1605269bd0d7f332f1d81fd28
                 todoList.removeChild(event.currentTarget.parentNode)
             })
             input.value =''
@@ -57,11 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     addButton.addEventListener('click', addTodo)
-<<<<<<< HEAD
-
-=======
     // deleteButton.addEventListener('click', deleteButton)
->>>>>>> 3fec5cb4c0bf22d1605269bd0d7f332f1d81fd28
       // 할 일 입력창에서 enter key가 눌렸을 때
     input.addEventListener('keypress', (event) => {
         const ENTER = 13
