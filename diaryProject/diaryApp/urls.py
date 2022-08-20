@@ -22,9 +22,6 @@ urlpatterns = [
     path('', views.index, name="home"),
     path('fishing', views.fishing, name="fishing"),
     path('background', views.background, name='background'),
-    path("registration/signup", views.signup, name='signup'),
-    path("registration/login", views.login, name='login'),
-    path("registration/logout", views.logout, name='logout'),
 ]
 
 if settings.DEBUG: 

@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="static/css/index.css"/>
 {% endblock style %}
 {% block js %}
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script defer src="./static/js/diary.js"></script>
 <script type="module" src="./static/js/index.mjs"></script>
 {% endblock js %}
@@ -45,6 +44,8 @@
                 일기 쓰기
                 </div>
               </main>
+              
+        <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script>
             let todoSendList = []
             $('.createDiary').submit((event) => {

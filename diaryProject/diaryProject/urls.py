@@ -26,6 +26,7 @@ urlpatterns = [
     path('index', views.index, name='index'),
     path('detail', views.detail, name='detail'),
     path('diary', DiaryView,  name="diary"),
+    path('home/', include('diaryApp.urls')),
     ]
 
 if settings.DEBUG: 
