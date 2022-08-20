@@ -65,23 +65,22 @@ const render = () => {
     const context = canvas.getContext('2d');
     for (const star of stars) {
         if (star.type === 1) {
-            context.drawImage(star1, star.x*width, star.y*height, star.size*10, star.size*10);
+            context.drawImage(star1, star.x*width, star.y*height, star.size*20, star.size*20);
         } else if (star.type === 2) {
-            context.drawImage(star2, star.x*width, star.y*height, star.size*10, star.size*10);
+            context.drawImage(star2, star.x*width, star.y*height, star.size*20, star.size*20);
         } else if (star.type === 3) {
-            context.drawImage(star3, star.x*width, star.y*height, star.size*10, star.size*10);
+            context.drawImage(star3, star.x*width, star.y*height, star.size*20, star.size*20);
         }
     }
     for (const planet of planets) {
-        console.log(planet.type, typeof planet.type);
         if (planet.type === 1) {
-            context.drawImage(planet1, planet.x*width, planet.y*height, planet.size*30, planet.size*30);
+            context.drawImage(planet1, planet.x*width, planet.y*height, planet.size*50, planet.size*50);
         } else if (planet.type === 2) {
-            context.drawImage(planet2, planet.x*width, planet.y*height, planet.size*30, planet.size*30);
+            context.drawImage(planet2, planet.x*width, planet.y*height, planet.size*50, planet.size*50);
         } else if (planet.type === 3) {
-            context.drawImage(planet3, planet.x*width, planet.y*height, planet.size*64, planet.size*36);
+            context.drawImage(planet3, planet.x*width, planet.y*height, planet.size*96, planet.size*54);
         } else if (planet.type === 4) {
-            context.drawImage(planetS, planet.x*width, planet.y*height, planet.size*45, planet.size*70);
+            context.drawImage(planetS, planet.x*width, planet.y*height, planet.size*67.5, planet.size*105);
         }
     }
 }
@@ -92,4 +91,9 @@ const render = () => {
 // }
 
 init();
-setInterval(render, 1000);
+setInterval(render, 500);
+
+const randomDiary = () => {
+    const diaryElement = document.createElement('div');
+    
+}
