@@ -2,12 +2,10 @@
 {% load static %}
 {% block style %}
 {% comment %} 여기에 연결할 css <link/> 추가 {% endcomment %}
-<link rel='stylesheet', style='text/css', href="{% static '/css/background.css' %}" />
 <link rel='stylesheet', style='text/css', href="{% static '/css/fishing.css' %}" />
 {% endblock style %}
 {% block js %}
 {% comment %} 여기에 연결할 js <script/> 추가 {% endcomment %}
-<script src="{% static 'js/background.js' %}"></script>
 <script src="{% static 'js/fishing.js' %}"></script>
 {% endblock js %}
 {% block content %}
