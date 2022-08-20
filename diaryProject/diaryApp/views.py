@@ -39,3 +39,9 @@ def logout(request):
 
 def index(request):
     return render(request, 'index.html')
+
+def fishing(request):
+    return render(request, 'fishing.html')
+
+def background(request):
+    return render(request, 'background.html')
