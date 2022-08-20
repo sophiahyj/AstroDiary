@@ -62,14 +62,33 @@ const renderCalendar = () => {
         // date this 또는 date other이라는 클래스를 갖는 div태그를 생성 - 내용은 date
         dates[i] = `<div class="date ${condition}">${date}</div>`;
     });
+
+    // dates.forEach((date, i)=>{
+    //     const condition = i>= firstDateIndex && i < lastDateIndex + 1 ? 
+    //     'this':
+    //     'other';
+    //     dates[i] = `
+    //         <div class="date ${condition}">
+    //             <div class="date-itm">
+    //                 ${date}
+    //             <div>
+                
+    //             <div class="date_event">
+    //                 <div class="event-itm">EVENT</div>
+    //             </div>
+    //         </div>
+    //     `;
+    // });
+
+    
     document.querySelector('.dates').innerHTML = dates.join('');
     //배열의 모든 요소를 연결하여 하나의 문자열을 만듦, 매개변수 = seperator
 
     const today = new Date();
     if (viewMonth === today.getMonth() && viewYear === today.getFullYear()){
-        for (let date of document.querySelectorAll('.this')){
+        for (let date of document.querySelectorAll('.date-itm')){
             if (+date.innerText === today.getDate()){
-                date.classList.add('today');
+                date.parentNode.classList.add('today')
                 break;
             }
         }
@@ -77,7 +96,6 @@ const renderCalendar = () => {
 };
 
 renderCalendar();
-
 const prevMonth = () => {
     date.setMonth(date.getMonth() - 1);
     renderCalendar();
