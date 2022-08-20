@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
+from .models import Diary
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 
 # Create your views here.
 def signup(request):
@@ -39,3 +42,12 @@ def logout(request):
 
 def index(request):
     return render(request, 'index.html')
+
+@csrf_exempt
+def DiaryView(request):
+    if request.method == 'POST':
+        diary = Diary.objects.create(
+            todo = request.POST['todo'],
+            content = request.POST['content'],
+        )
+        return JsonResponse({'msg': "link 생성완료"})

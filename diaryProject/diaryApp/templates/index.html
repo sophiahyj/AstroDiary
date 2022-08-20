@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
-    <link rel="stylesheet" href="static/css/index.css"/>
-    <script defer src="./static/js/diary.js"></script>
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="static/css/index.css"/>
+{% endblock style %}
+{% block js %}
+<script defer src="./static/js/diary.js"></script>
+<script type="module" src="./static/js/index.js"></script>
+{% endblock js %}
+{% block content %}
     <div class="navbar_container">
         <li class="navbar_logo">
             <img src="#">
@@ -27,8 +25,6 @@
         {% endif %}
     </div>
     <!-- 여기부터 모달입니당 -->
-    <div id="banner">
-        <canvas id="canvas"></canvas>
   
         <div class="modal-container">
           <div class="modal">
@@ -39,43 +35,17 @@
               </button>
             </div>
             <article class="modal-body">
-              <!-- <div class="todo-list" data-list-display-container>
-                <div class="todo-header">
-                    <h2 class="list-title" data-list-title>To Do</h2>
-                    <p class="task-count" data-list-count>3 tasks remaining</p>
-                </div>
-
-                <div class="todo-body">
-                    <div class="tasks" data-tasks>
-                        <div class="task">
-                            <input type="checkbox" id="task-1"/>
-                            <label for = "task-1">
-                                <span class="custom-checkbox"></span>
-                                task1    
-                            </label>
-                        </div>
-                        <div class="task">
-                            <input type="checkbox" id="task-1"/>
-                            <label for = "task-1">
-                                <span class="custom-checkbox"></span>
-                                task2   
-                            </label>
-                        </div>
-                        <div class="task">
-                            <input type="checkbox" id="task-1"/>
-                            <label for = "task-1">
-                                <span class="custom-checkbox"></span>
-                                task3    
-                            </label>
-                        </div>
-                    </div>
-                </div> -->
-                <div class="container">
-                    <div class="header">
-                        
-                    </div>
-                </div>
-            
+                <form class="createDiary" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h1>TO DOs</h1>
+                    <span></span><br>
+                    <input id="todo">
+                    <button id="add-button">+</button>
+                    <div id="todo-list"></div>
+                    <h1>your diary</h1>
+                    <input type="text" id="content" name="content" placeholder="일기를 적어주세요.">
+                    <button>등록</button>
+                </form>
             </article>
           </div>
         </div>
@@ -84,10 +54,24 @@
                 일기 쓰기
                 </div>
               </main>
+        <script>
+            $('.createDiary').submit((event) => {
+                event.preventDefault()
+                console.log("실행됨")
+                let form = $(".createDiary")[0]
+                let form_data = new FormData(form)
+                content = $("#content").val()
+                form_data.append("name", content)
+                $.ajax({
+                  type: "POST",
+                  enctype: 'multipart/form-data',
+                  url: 'diary',
+                  data: form_data,
+                  processData: false,
+                  contentType: false,
+                })
+              })
+        </script>
   
-      </div>
-  
-      <script type="module" src="./static/js/index.js"></script>
-      <script src="./static/js/stars.js"></script>
-</body>
-</html>
+    </div>
+{% endblock content %}
