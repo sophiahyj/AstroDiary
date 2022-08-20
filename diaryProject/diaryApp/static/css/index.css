@@ -14,6 +14,10 @@ body {
   height: 100%;
 } */
 
+* {
+  font-family: 'Laila', sans-serif;
+}
+
 .container {
   background: url(../images/starfalls.gif);
   background-repeat: repeat;
@@ -25,16 +29,22 @@ body {
 .btn_register button {
   width: 246px;
   height: 57px;
-  background: #896AC9;
+  background: linear-gradient(90deg, #234567 0%, #345678 44.65%, #456789 91.21%);
   border-radius: 12px;
   border: 0px;
   font-weight: bolder;
   color: white;
   font-size: 20px;
+  
+}
+
+.navbar_logo {
+  margin-top: -10px;
 }
 
 .btn_register {
-  position: absolute;
+  margin-left: 63px;
+  margin-top: 250px;
 }
 
 .shadow {
@@ -70,4 +80,12 @@ body {
 }
 .modal-container {
   z-index: 2;
+}
+
+.user_info {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 250px;
 }
