@@ -29,11 +29,13 @@
                   {% csrf_token %}
                   <h1>TO DOs</h1>
                   <span></span><br>
-                  <input id="todo" name="todo"/>
-                  <button type="button" id="add-button">+</button>
+                  <div class="todo_group">
+                    <input id="todo" name="todo"/>
+                    <button type="button" id="add-button" style="margin-left: 20px;">+</button>
+                  </div>
                   <div id="todo-list"></div>
                   <h1>your diary</h1>
-                  <input type="text" id="content" name="content" placeholder="일기를 적어주세요.">
+                  <texta  rea type="text" id="content" name="content" placeholder="일기를 적어주세요."></textarea>
                   <button>등록</button>
               </form>
           </article>

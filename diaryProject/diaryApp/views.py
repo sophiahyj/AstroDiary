@@ -55,10 +55,16 @@ def detail(request):
 @csrf_exempt
 def DiaryView(request):
     if request.method == 'POST':
-        diary = Diary.objects.create(
+        new_diary = Diary.objects.create(
             todos = request.POST['todos'],
             content = request.POST['content'],
             creator = User.objects.get(username=request.POST['username']),
         )
         return JsonResponse({'msg': "link 생성완료"})
-        
+    return redirect('detail', new_diary.pk)
+
+
+def detail(request, diary_pk):
+    diary = Diary.objects.get(pk=diary_pk)
+
+    return render(request, 'detail.html', {'diary': diary})        

@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("Account/", include('Account.urls'), name='signup'),
     path('index', views.index, name='index'),
-    path('detail', views.detail, name='detail'),
+    path('detail/<int:diary_pk>', views.detail, name='detail'),
     path('diary', DiaryView,  name="diary"),
     path('home/', include('diaryApp.urls')),
     ]
