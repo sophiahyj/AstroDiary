@@ -15,18 +15,20 @@
                 {% endif %}
             </div>
         </div>
-        <img src="../static/images/frame.png">
-        <div class="content">
-            <div class="date">
-                {{diary.diary_created_at}}
+        <div class="outer">
+            <img src="../static/images/frame.png">
+                <span class="date" style="text-align: center;">
+                    {{diary.diary_created_at}} <br>
+                    {{diary.creator}}님의 일기
+                </span>
+    
+                <div class="todo_list">{{diary.creator}}님의 To-do List</div>
+                    {{diary.todos}}
+                <div class="diary_question">Q.오늘 하루 가장 행복했던 일은?</div>
+                    {{diary.content}}
             </div>
-            <div>{{diary.creator}}님의 일기</div>
-
-            <div>{{diary.creator}}님의 To-do List</div>
-                {{diary.todo}}
-            <div>Q.오늘 하루 가장 행복했던 일은?</div>
-                {{diary.content}}
         </div>
+
 
     </div>
 {% endblock content %}

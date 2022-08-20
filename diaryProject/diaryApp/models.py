@@ -20,5 +20,5 @@ class Diary(models.Model):
         return self.content
 
 class Likes(models.Model):  
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="likes")
-    diary_id = models.ForeignKey(Diary, on_delete=models.CASCADE, related_name="likes")
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="likes_user_id")
+    diary_id = models.ForeignKey(Diary, on_delete=models.CASCADE, related_name="likes_diary_id")

@@ -21,11 +21,7 @@ class Diary(models.Model):
     todos = models.TextField(max_length=50, null=True)
     content = models.TextField(max_length=100, null=True)
     diary_created_at  = models.DateTimeField(auto_now_add=True, null=True)
-    creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name="diary")
+    creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name="creator")
 
     def __str__(self):
         return self.creator.name
-
-class Likes(models.Model):  
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="likes")
-    diary_id = models.ForeignKey(Diary, on_delete=models.CASCADE, related_name="likes")

@@ -10,3 +10,16 @@
 h1 {
     position: absolute;
 }
+
+.outer {
+    position: relative;
+}
+
+.todo_list {
+    font-family: 'Noto Serif KR', serif;
+    color: #28104E;
+    font-size: 20px;
+    font-weight: bolder;
+    position: absolute;
+    top: 110px;
+}
