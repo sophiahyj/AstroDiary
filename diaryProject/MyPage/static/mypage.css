@@ -59,12 +59,13 @@
 }
 
 .calendar {
-    width: 100%;
+    width: 90%;
+    margin: 0px auto;
     height: 35%;
     background-color: blueviolet;
 }
 
-.month-num {
+.month {
     position: absolute;
     text-align: center;
     top: -40px;
@@ -90,7 +91,7 @@
     width: 20px;
     height: 20px;
     background-color: beige;
-    margin-left: 70%;
+    margin-left: 55%;
 }
 
 .footer {
@@ -101,7 +102,7 @@
 }
 
 .main-btn {
-    width: 30%;
+    width: 90%;
     height: 100%;
     background-color: aqua;
     position: relative;

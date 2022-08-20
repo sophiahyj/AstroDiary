@@ -1,0 +1,62 @@
+.calender {
+    position: relative;
+}
+
+.days {
+    display: flex;
+}
+
+.day {
+    width: calc(98%/7);
+    padding-left: 0.5px;
+    text-align: center;
+    transition: all .3s;
+}
+
+.dates {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+}
+
+.date {
+    cursor: pointer;
+    width: calc(95%/7);
+    text-align: center;
+    border: 1px solid #333333;
+    transition: all .3s;
+}
+
+.go-today {
+    width: 80%;
+    border-left: 1px solid #333333;
+    border-right: 1px solid #333333;
+}
+
+.nav-btn {
+    width: 20px;
+    height: 20px;
+    border: none;
+    font-size: 16px; 
+    line-height: 15px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.day:nth-child(7n+1), .date:nth-child(7n+1) {
+    color: #d13e3e;
+}
+
+.day:nth-child(7n), .date:nth-child(7n) {
+    color: #396ee2;
+}
+
+.today {
+    position: relative;
+    background-color: #fffc1c96;
+}
+
+.selected {
+    background-color: black;
+    color: #ffffff !important;
+}
