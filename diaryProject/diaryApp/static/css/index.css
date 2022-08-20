@@ -4,3 +4,55 @@ img {
     margin: 0 auto;
     border-radius: 50%;
 }
+
+@import "./ui/modal.css";
+@import "./ui/button.css";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap");
+
+/* html,
+body {
+  margin: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  background-color: #f1f5f9;
+  width: 100%;
+  height: 100%;
+} */
+
+
+.shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+
+.bg-white {
+  background-color: rgb(255, 255, 255);
+}
+
+.bg-btn {
+  background-color: rgb(60, 224, 253);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  /* display: flex; */
+  /* position: absolute;
+  left : 90%;
+  right: 50%; */
+  /* justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center; */
+  /* top : 50%;
+  bottom: 50%; */
+  font-size: 1em;
+  z-index: 1;
+}
+.modal-container {
+  z-index: 2;
+}

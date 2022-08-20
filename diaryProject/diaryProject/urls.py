@@ -18,12 +18,14 @@ from django.urls import path, include
 from diaryApp import views
 from django.conf import settings
 from django.conf.urls.static import static
+from diaryApp.views import DiaryView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("Account/", include('Account.urls'), name='signup'),
     path('index', views.index, name='index'),
     path('detail', views.detail, name='detail'),
+    path('diary', DiaryView,  name="diary"),
     ]
 
 if settings.DEBUG: 
