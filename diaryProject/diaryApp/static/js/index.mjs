@@ -1,4 +1,5 @@
-import { closemodal, openmodal } from "./modal.js";
+import { closemodal, openmodal } from "./modal.mjs";
+
 const $ = (selector) => document.querySelector(selector);
 function App() {
   $(".btn-open-modal").addEventListener("click", ()=>{

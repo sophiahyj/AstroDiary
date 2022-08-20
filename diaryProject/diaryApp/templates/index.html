@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block style %}
-<link rel="stylesheet" href="static/css/index.css"/>
+<link type="text/css" rel="stylesheet" href="{% static 'css/index.css' %}"/>
 {% endblock style %}
 {% block js %}
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script defer src="./static/js/diary.js"></script>
-<script type="module" src="./static/js/index.js"></script>
+<script defer src="{% static 'js/diary.js' %}"></script>
+<script type="module" src="{% static 'js/index.mjs' %}"></script>
 {% endblock js %}
 {% block content %}
     <div class="navbar_container">
@@ -33,7 +32,7 @@
             <div class="modal-header">
               <p class="modal-title">DIARY</p>
               <button class="modal-close">
-                <img src="static/assets/icons/close-x.svg" alt="close" />
+                <img src="{% static 'assets/icons/close-x.svg' %}" alt="close" />
               </button>
             </div>
             <article class="modal-body">
@@ -56,6 +55,8 @@
                 일기 쓰기
                 </div>
               </main>
+              
+        <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script>
             let todoSendList = []
             $('.createDiary').submit((event) => {
