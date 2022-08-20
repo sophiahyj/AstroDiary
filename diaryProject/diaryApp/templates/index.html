@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="static/css/index.css"/>
+    <script defer src="./static/js/diary.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -23,5 +26,68 @@
         </li>
         {% endif %}
     </div>
+    <!-- 여기부터 모달입니당 -->
+    <div id="banner">
+        <canvas id="canvas"></canvas>
+  
+        <div class="modal-container">
+          <div class="modal">
+            <div class="modal-header">
+              <p class="modal-title">DIARY</p>
+              <button class="modal-close">
+                <img src="static/assets/icons/close-x.svg" alt="close" />
+              </button>
+            </div>
+            <article class="modal-body">
+              <!-- <div class="todo-list" data-list-display-container>
+                <div class="todo-header">
+                    <h2 class="list-title" data-list-title>To Do</h2>
+                    <p class="task-count" data-list-count>3 tasks remaining</p>
+                </div>
+
+                <div class="todo-body">
+                    <div class="tasks" data-tasks>
+                        <div class="task">
+                            <input type="checkbox" id="task-1"/>
+                            <label for = "task-1">
+                                <span class="custom-checkbox"></span>
+                                task1    
+                            </label>
+                        </div>
+                        <div class="task">
+                            <input type="checkbox" id="task-1"/>
+                            <label for = "task-1">
+                                <span class="custom-checkbox"></span>
+                                task2   
+                            </label>
+                        </div>
+                        <div class="task">
+                            <input type="checkbox" id="task-1"/>
+                            <label for = "task-1">
+                                <span class="custom-checkbox"></span>
+                                task3    
+                            </label>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="container">
+                    <div class="header">
+                        
+                    </div>
+                </div>
+            
+            </article>
+          </div>
+        </div>
+              <main class="flex">
+                <div class="btn-open-modal btn bg-btn shadow text-center">
+                일기 쓰기
+                </div>
+              </main>
+  
+      </div>
+  
+      <script type="module" src="./static/js/index.js"></script>
+      <script src="./static/js/stars.js"></script>
 </body>
 </html>
