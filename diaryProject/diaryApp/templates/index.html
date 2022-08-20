@@ -14,7 +14,7 @@
             <img src="#"/>
         </li>
         {% if user.is_authenticated %}
-        <input id="username" value={{user.username}}></input>
+        <input id="username" value={{user.username}} style="display:none;"></input>
         <span class="navbar_menu_item">안녕하세요!, {{user.username}} 님!</span>
         <a href="{% url 'logout' %}">Logout</a>
         {% else %}
@@ -43,7 +43,14 @@
                     <span></span><br>
                     <input id="todo" name="todo"/>
                     <button type="button" id="add-button">+</button>
-                    <div id="todo-list"></div>
+                    <ul id="todo-list"></ul>
+                    <!-- <button type='button' id="delete-button">delete</button> -->
+                    <!-- <script>
+                        const deleteButton = document.querySelector('#delete-button')
+                        let tododelete = document.getElementById('todo-list');
+                        tododelete.removeChild((tododelete.lastElementChild).nodeType);
+                        deleteButton.addEventListener('click', tododelete)
+                    </script> -->
                     <h1>your diary</h1>
                     <input type="text" id="content" name="content" placeholder="일기를 적어주세요.">
                     <button>등록</button>
