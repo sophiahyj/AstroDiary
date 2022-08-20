@@ -22,6 +22,7 @@ urlpatterns = [
     path('', views.index, name="home"),
     path('fishing', views.fishing, name="fishing"),
     path('background', views.background, name='background'),
+    path('base', views.base, name='base'),
 ]
 
 if settings.DEBUG: 

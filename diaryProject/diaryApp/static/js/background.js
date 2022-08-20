@@ -3,7 +3,7 @@ const stars = [];
 const planets = [];
 
 const init = () => {
-    const background = document.getElementById('background-container');
+    const background = document.getElementById('body-container');
     canvas.width = background.offsetWidth;
     canvas.height = background.offsetHeight;
     for (let i=0; i<35; i++) {

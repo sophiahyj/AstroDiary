@@ -8,5 +8,15 @@ body {
 .body-container {
     height: 812px;
     width: 375px;
-    background-color: white;
+    background-color: #161b39;
+    position: relative;
+}
+
+canvas {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
 }
