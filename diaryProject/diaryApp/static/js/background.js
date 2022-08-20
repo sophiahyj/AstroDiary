@@ -92,8 +92,3 @@ const render = () => {
 
 init();
 setInterval(render, 500);
-
-const randomDiary = () => {
-    const diaryElement = document.createElement('div');
-    
-}

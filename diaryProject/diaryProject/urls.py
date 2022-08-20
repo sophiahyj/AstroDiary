@@ -18,6 +18,7 @@ from django.urls import path, include
 from diaryApp import views
 from django.conf import settings
 from django.conf.urls.static import static
+from diaryApp.views import DiaryView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,6 +26,8 @@ urlpatterns = [
     path("registration/login", views.login, name='login'),
     path("registration/logout", views.logout, name='logout'),
     path('home/', include('diaryApp.urls'), name='diaryApp'),
+    path('index', views.index, name='index'),
+    path('diary', DiaryView,  name="diary"),
 ]
 
 if settings.DEBUG: 

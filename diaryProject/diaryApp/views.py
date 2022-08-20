@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
+from .models import Diary
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 
 # Create your views here.
 def signup(request):
@@ -45,3 +48,13 @@ def fishing(request):
 
 def background(request):
     return render(request, 'background.html')
+
+@csrf_exempt
+def DiaryView(request):
+    if request.method == 'POST':
+        diary = Diary.objects.create(
+            todos = request.POST['todos'],
+            content = request.POST['content'],
+            creator = User.objects.get(username=request.POST['username']),
+        )
+        return JsonResponse({'msg': "link 생성완료"})
