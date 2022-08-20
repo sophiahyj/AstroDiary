@@ -17,11 +17,18 @@
             <img src="https://postfiles.pstatic.net/MjAyMjA4MjBfMjQ4/MDAxNjYwOTc2MzI2Njc3.B7NO4sENxgFfxnIUcVL8hv5djoPwUwYVxbtDeaSa8S8g.DD_S4j5QVaqbdL2CA6vuU8XoB2xjKkjsZ5ShZWo3agcg.PNG.ahrefhoo/fishingBag.png?type=w966">
         </div>
         <div class="monthly-total">
-            <div class="year"></div>
-            <div class="month"></div>
-            <button class="nav-btn month-prev">&lt;</button>
-            <button class="nav-btn go-today">오늘</button>
-            <button class="nav-btn month-next">&gt;</button>
+            <div class="calendar_header">
+                <div class="ym-wrapper">
+                    <div class="year"></div>
+                    <div class="month"></div>
+                </div>
+    
+                <div class="calendar_nav">
+                    <button class="nav-btn month-prev">&lt;</button>
+                    <button class="nav-btn go-today">오늘</button>
+                    <button class="nav-btn month-next">&gt;</button>
+                </div>
+            </div>
             <div class="this-month">이달의 탐사</div>
             <div class="total-num">11</div>
             <div>회</div>
@@ -40,6 +47,7 @@
         <div class="dates"></div>
     </div>
     <script src="{% static 'js/calendar.js' %}"></script>
+    <script src="{% static 'js/reverse.js' %}"></script>
 
 
     <!-- <div class="footer">
