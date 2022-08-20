@@ -1,0 +1,34 @@
+{% extends 'diaryApp/base.html' %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'mypage.css' %}">
+{% endblock style %}
+{% block content %}
+    <div class="basic-info">
+        <div class="profile"></div>
+        <div class="name-wrap">
+            <div class="nick-name">Jihoo21_m</div>
+            <div class="level-name">발자국을 남긴 우주인 넹 sksk</div>
+        </div>
+    </div>
+    <div class="middle-info">
+        <div class="fishing-bag">
+            <img src="https://postfiles.pstatic.net/MjAyMjA4MjBfMjQ4/MDAxNjYwOTc2MzI2Njc3.B7NO4sENxgFfxnIUcVL8hv5djoPwUwYVxbtDeaSa8S8g.DD_S4j5QVaqbdL2CA6vuU8XoB2xjKkjsZ5ShZWo3agcg.PNG.ahrefhoo/fishingBag.png?type=w966">
+        </div>
+        <div class="monthly-total">
+            <div class="month-num">11</div>
+            <div class="month-prev"></div>
+            <div class="month-next"></div>
+            <div class="this-month">이달의 탐사</div>
+            <div class="total-num">11</div>
+            <div>회</div>
+        </div>
+    </div>
+    <div class="calendar">
+    </div>
+    <div class="footer">
+        <div class="main-btn">
+            <img src="https://postfiles.pstatic.net/MjAyMjA4MjBfOSAg/MDAxNjYwOTc4MTcyNjAz.Q9VZr7j83gvvaudrpS-KP-GqbRFOwf_lKiUWGre5GPsg.CcKPBb9RRw8McAQi5KnicXrP-dMEa2UbDHiwZtcWbkcg.PNG.ahrefhoo/Group_2.png?type=w966">
+        </div>
+    </div>
+{% endblock content %}
