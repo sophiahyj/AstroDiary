@@ -15,14 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from diaryApp import views
+import Account.views
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("Account/", include('Account.urls'), name='signup'),
-    path('index', views.index, name='index'),]
+    path('login', Account.views.login, name='login'),
+    path('signup', Account.views.signup, name='signup'),
+    path('logout', Account.views.logout, name='logout'),
+    path('index', Account.views.index, name='index'),
+]
 
 if settings.DEBUG: 
     urlpatterns += static(

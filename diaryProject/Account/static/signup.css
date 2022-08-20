@@ -1,0 +1,85 @@
+* {
+    font-family: 'Laila', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+input {
+    width: 250px;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+    margin-top: -20px;
+}
+
+.container {
+    width: 309px;
+    height: 450px;
+    left: 35px;
+    top: 172px;
+    margin: 0 auto;
+    background: rgba(98, 104, 108, 0.75);
+}
+
+p {
+    color: white;
+    font-size: 14px;
+    margin-top: 40px;
+    font-weight: bolder;
+}
+
+a {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.signupbox {
+    margin-left: 20px;
+}
+
+button {
+    width: 246px;
+    height: 57px;
+    left: 68px;
+    top: 505px;
+    margin-top: 30px;
+    background: #896AC9;
+    border-radius: 12px;
+    border: 0px;
+    font-weight: bolder;
+    color: white;
+    font-size: 20px;
+}
+
+.signup_btn {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 200px;
+}
+
+.signup {
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-color: #896AC9;
+    margin-left: -150px;
+}
+
+.login {
+    color: #A5ADB2;
+}
