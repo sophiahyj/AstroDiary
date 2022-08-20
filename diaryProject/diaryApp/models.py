@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class User(models.Model):
-    profile_image = models.ImageField(blank=True, null=True, upload_to="images")
+    profile_image = models.ImageField(blank=True, null=True, upload_to="profile_pics", default='#')
     level = models.IntegerField(null=True)
 
     def __str__(self):

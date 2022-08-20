@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block style %}
-{% comment %} 여기에 연결할 css <link/> 추가 {% endcomment %}
+<link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
 {% endblock style %}
 {% block js %}
-{% comment %} 여기에 연결할 js <script/> 추가 {% endcomment %}
 {% endblock js %}
 {% block content %}
     <div class="navbar_container">
@@ -12,7 +11,9 @@
             <img src="#">
         </li>
         {% if user.is_authenticated %}
-        <span class="navbar_menu_item">안녕하세요!, {{user.username}} 님!</span>
+        <span class="navbar_menu_item">안녕하세요! {{user.username}} 님</span>
+        <img class="profile_pic" src="{{request.user.profile.profile_pic.url}}">
+        <!-- 윗 줄 베끼면 유저 사진 불러오기 가능 -->
         <a href="{% url 'logout' %}">Logout</a>
         {% else %}
         <li class="navbar_menu_item">

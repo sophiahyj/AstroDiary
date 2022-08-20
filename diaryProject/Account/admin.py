@@ -1,6 +1,15 @@
 from django.contrib import admin
-from .models import User, Diary, Likes
+from django.contrib.auth.admin import UserAdmin
+from .models import User, Profile, Diary, Likes
 
 # Register your models here.
-admin.site.register(User)
+class ProfileInline(admin.StackedInline):
+    model=Profile
+
+class CustomUserAdmin(UserAdmin):
+    inlines = (ProfileInline,)
+
+admin.site.unregister(User)
+admin.site.register(User, CustomUserAdmin)
+
 admin.site.register(Diary)

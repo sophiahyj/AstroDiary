@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'diaryApp/detail.css' %}">
+{% endblock style %}
+{% block content %}
+    <div class="container">
+        <div class="header">
+            <img src="#">
+            <div class="user_info">
+                {% if user.is_authenticated %}
+                <span class="navbar_menu_item">안녕하세요! {{user.username}} 님</span>
+                <br>
+                <a href="{% url 'logout' %}">Logout</a>
+                {% endif %}
+            </div>
+        </div>
+        <img src="../static/images/frame.png">
+        <div class="content">
+            <div class="date">
+                {{diary.diary_created_at}}
+            </div>
+            <div>{{diary.creator}}님의 일기</div>
+
+            <div>{{diary.creator}}님의 To-do List</div>
+                {{diary.todo}}
+            <div>Q.오늘 하루 가장 행복했던 일은?</div>
+                {{diary.content}}
+        </div>
+
+    </div>
+{% endblock content %}

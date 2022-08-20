@@ -18,7 +18,7 @@
             <form method="POST">
                 {% csrf_token %}
                 {% if error %}
-                <p>{{error}}</p>
+                <p class="error">{{error}}</p>
                 {% endif %}
                 <div class="loginbox">
                     <p>Username</p>

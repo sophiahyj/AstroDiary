@@ -52,7 +52,6 @@ button {
     height: 57px;
     left: 68px;
     top: 505px;
-    margin-top: 30px;
     background: #896AC9;
     border-radius: 12px;
     border: 0px;
@@ -82,4 +81,10 @@ button {
 .signup {
     color: #A5ADB2;
     margin-left: -150px;
+}
+
+.error {
+    font-family: 'Hahmlet', serif;
+    font-weight: light;
+    margin-left: 20px;
 }
