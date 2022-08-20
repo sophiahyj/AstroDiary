@@ -9,89 +9,89 @@
 <script type="module" src="../static/js/index.js"></script>
 {% endblock js %}
 {% block content %}
+  <div class="container">
     <div class="navbar_container">
-        <ul class="navbar_logo">
-            <img src="#"/>
-        </ul>
-        {% if user.is_authenticated %}
-        <input id="username" value={{user.username}}></input>
-        <span class="navbar_menu_item">안녕하세요!, {{user.username}} 님!</span>
-        <!-- <img class="profile_pic" src="{{request.user.profile.profile_pic.url}}"> -->
-        <a href="{% url 'logout' %}">Logout</a>
-        <div class="modal-container">
-          <div class="modal">
-            <div class="modal-header">
-              <p class="modal-title">DIARY</p>
-              <button class="modal-close">
-                <img src="static/assets/icons/close-x.svg" alt="close" />
-              </button>
-            </div>
-            <article class="modal-body">
-                <form class="createDiary" method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <h1>TO DOs</h1>
-                    <span></span><br>
-                    <input id="todo" name="todo"/>
-                    <button type="button" id="add-button">+</button>
-                    <div id="todo-list"></div>
-                    <h1>your diary</h1>
-                    <input type="text" id="content" name="content" placeholder="일기를 적어주세요.">
-                    <button>등록</button>
-                </form>
-            </article>
+      <ul class="navbar_logo">
+          <img src="#"/>
+      </ul>
+      {% if user.is_authenticated %}
+      <input id="username" value={{user.username}}></input>
+      <span class="navbar_menu_item">안녕하세요!, {{user.username}} 님!</span>
+      <!-- <img class="profile_pic" src="{{request.user.profile.profile_pic.url}}"> -->
+      <a href="{% url 'logout' %}">Logout</a>
+      <div class="modal-container">
+        <div class="modal">
+          <div class="modal-header">
+            <p class="modal-title">DIARY</p>
+            <button class="modal-close">
+              <img src="static/assets/icons/close-x.svg" alt="close" />
+            </button>
           </div>
+          <article class="modal-body">
+              <form class="createDiary" method="POST" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <h1>TO DOs</h1>
+                  <span></span><br>
+                  <input id="todo" name="todo"/>
+                  <button type="button" id="add-button">+</button>
+                  <div id="todo-list"></div>
+                  <h1>your diary</h1>
+                  <input type="text" id="content" name="content" placeholder="일기를 적어주세요.">
+                  <button>등록</button>
+              </form>
+          </article>
         </div>
-              <main class="flex">
-                <div class="btn-open-modal btn bg-btn shadow text-center">
-                일기 쓰기
-                </div>
-              </main>
-        <script>
-            let todoSendList = []
-            $('.createDiary').submit((event) => {
-                event.preventDefault()
-                let form = $(".createDiary")[0]
-                let form_data = new FormData(form)
-                todos = todoSendList
-                content = $("#content").val()
-                username = $("#username").val()
-                form_data.append("todos", todos)
-                form_data.append("content", content)
-                form_data.append("username", username)
-                console.log("todos", todos)
-                console.log("content", content)
-                console.log("username",username)
-                // FormData의 key 확인
-                for (let key of form_data.keys()) {
-                    console.log("key",key);
-                }
-                
-                // FormData의 value 확인
-                for (let value of form_data.values()) {
-                    console.log("val",value);
-                }
-                $.ajax({
-                  type: "POST",
-                  enctype: 'multipart/form-data',
-                  url: 'diary',
-                  data: form_data,
-                  processData: false,
-                  contentType: false,
-                })
+      </div>
+            <main class="flex">
+              <div class="btn-open-modal btn bg-btn shadow text-center">
+              일기 쓰기
+              </div>
+            </main>
+      <script>
+          let todoSendList = []
+          $('.createDiary').submit((event) => {
+              event.preventDefault()
+              let form = $(".createDiary")[0]
+              let form_data = new FormData(form)
+              todos = todoSendList
+              content = $("#content").val()
+              username = $("#username").val()
+              form_data.append("todos", todos)
+              form_data.append("content", content)
+              form_data.append("username", username)
+              console.log("todos", todos)
+              console.log("content", content)
+              console.log("username",username)
+              // FormData의 key 확인
+              for (let key of form_data.keys()) {
+                  console.log("key",key);
+              }
+              
+              // FormData의 value 확인
+              for (let value of form_data.values()) {
+                  console.log("val",value);
+              }
+              $.ajax({
+                type: "POST",
+                enctype: 'multipart/form-data',
+                url: 'diary',
+                data: form_data,
+                processData: false,
+                contentType: false,
               })
-        </script>
-        {% else %}
-        <div class="btn">
-          <button href="{% url 'login' %}">Login</button>
-          <br>
-          <br>
-          <button href="{% url 'signup' %}">Sign Up</button>
-        </div>
-        {% endif %}
-    </div>
-    <!-- 여기부터 모달입니당 -->
-  
+            })
+      </script>
+      {% else %}
+      <div class="btn">
+        <button type="button" onclick="location.href='{% url 'login' %}'">Login</button>
+        <br>
+        <br>
+        <button type="button" onclick="location.href='{% url 'signup' %}'">Sign Up</button>
+      </div>
+      {% endif %}
+  </div>
+  <!-- 여기부터 모달입니당 -->  
+  </div>
+  </div>
 
-  
-    </div>
 {% endblock content %}
