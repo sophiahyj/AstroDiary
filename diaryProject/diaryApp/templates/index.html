@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="static/css/index.css"/>
 {% endblock style %}
 {% block js %}
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script defer src="{% static 'js/diary.js' %}"></script>
 <script type="module" src="{% static 'js/index.mjs' %}"></script>
 {% endblock js %}
@@ -41,24 +41,13 @@
 
                     <h1>your diary</h1>
                       <input type="text" id="content" name="content" placeholder="일기를 적어주세요.">
-                      <br><br><br><br><br><br><br><br><br><br><br><br>
+                      
                       <button>등록</button>
-                    
-                  </div>
-                  <h1>TO DOs</h1>
-                  <span></span><br>
-                  <div class="todo_group">
-                    <input id="todo" name="todo"/>
-                    <button type="button" id="add-button" style="margin-left: 20px;">+</button>
-                  </div>
-                  <div id="todo-list"></div>
-                  <h1>your diary</h1>
-                  <textarea type="text" id="content" name="content" placeholder="일기를 적어주세요."></textarea>
-                  <button>등록</button>
-              </form>
+                  </div>    
+              </form>      
           </article>
         </div>
-      </div>
+      </div>        
             <main class="flex">
               <div class="btn-open-modal btn bg-btn shadow text-center">
               일기 쓰기
