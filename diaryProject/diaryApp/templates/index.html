@@ -8,6 +8,7 @@
 <script type="module" src="./static/js/index.mjs"></script>
 {% endblock js %}
 {% block content %}
+  <div class="container">
     <div class="navbar_container">
         <li class="navbar_logo">
             <img src="#"/>
@@ -44,8 +45,6 @@
                 일기 쓰기
                 </div>
               </main>
-              
-        <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script>
             let todoSendList = []
             $('.createDiary').submit((event) => {
@@ -89,4 +88,6 @@
         </div>
         {% endif %}
     </div>
+  </div>
+
 {% endblock content %}

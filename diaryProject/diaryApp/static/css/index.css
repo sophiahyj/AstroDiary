@@ -14,11 +14,17 @@ body {
   height: 100%;
 } */
 
-button {
+.container {
+  background: url(../images/starfalls.gif);
+  background-repeat: repeat;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.btn_register button {
   width: 246px;
   height: 57px;
-  left: 68px;
-  top: 505px;
   background: #896AC9;
   border-radius: 12px;
   border: 0px;
