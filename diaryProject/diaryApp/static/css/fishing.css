@@ -1,0 +1,25 @@
+#main-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.random-diary-modal {
+    height: 75%;
+    width: 80%;
+    background-color: rgba(245, 245, 220, 0.8);
+    background-image: url("http://localhost:8000/static/img/diary-border.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    color: black;
+    display: flex;
+}
+.random-diary-modal.hide {
+    display: none;
+}
