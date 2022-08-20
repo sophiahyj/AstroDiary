@@ -13,14 +13,16 @@
             href="{% static '/css/base.css' %}"
         />
         {% block style %} {% endblock style %}
-        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-        {% block js %} {% endblock js %}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
-        <script src="{% static 'js/base.js' %}"></script>
     </head>
     <body>
-        <div class="body-container">
+        <div id="body-container" class="body-container">
+            <canvas id="canvas"></canvas>
             {% block content %} {% endblock %}
         </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+        <script src="{% static 'js/base.js' %}"></script>
+        <script src="{% static 'js/background.js' %}"></script>
+        {% block js %} {% endblock js %}
     </body>
 </html>

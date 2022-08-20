@@ -43,6 +43,12 @@ def logout(request):
 def index(request):
     return render(request, 'index.html')
 
+def fishing(request):
+    return render(request, 'fishing.html')
+
+def background(request):
+    return render(request, 'background.html')
+
 def detail(request):
     return render(request, 'detail.html')
     
@@ -55,3 +61,4 @@ def DiaryView(request):
             creator = User.objects.get(username=request.POST['username']),
         )
         return JsonResponse({'msg': "link 생성완료"})
+        

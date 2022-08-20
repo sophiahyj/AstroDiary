@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const deleteButton = document.createElement('button')
             deleteButton.textContent="delete"
 
+
             todoSendList.push(input.value)
             console.log(todoSendList)
             text.textContent = input.value
