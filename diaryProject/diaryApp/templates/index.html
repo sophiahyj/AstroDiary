@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block style %}
-<link type="text/css" rel="stylesheet" href="{% static 'css/index.css' %}"/>
+<link rel="stylesheet" href="static/css/index.css"/>
 {% endblock style %}
 {% block js %}
-<script defer src="{% static 'js/diary.js' %}"></script>
-<script type="module" src="{% static 'js/index.mjs' %}"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script defer src="./static/js/diary.js"></script>
+<script type="module" src="./static/js/index.mjs"></script>
 {% endblock js %}
 {% block content %}
     <div class="navbar_container">
@@ -13,26 +14,15 @@
             <img src="#"/>
         </li>
         {% if user.is_authenticated %}
-        <input id="username" value={{user.username}}></input>
+        <input id="username" value={{user.username}} style="display:none;"></input>
         <span class="navbar_menu_item">안녕하세요!, {{user.username}} 님!</span>
         <a href="{% url 'logout' %}">Logout</a>
-        {% else %}
-        <li class="navbar_menu_item">
-            <a href="{% url 'login' %}">Login</a>
-        </li>
-        <li class="navbar_menu_item">
-            <a href="{% url 'signup' %}">Sign Up</a>
-        </li>
-        {% endif %}
-    </div>
-    <!-- 여기부터 모달입니당 -->
-  
         <div class="modal-container">
           <div class="modal">
             <div class="modal-header">
               <p class="modal-title">DIARY</p>
               <button class="modal-close">
-                <img src="{% static 'assets/icons/close-x.svg' %}" alt="close" />
+                <img src="static/assets/icons/close-x.svg" alt="close" />
               </button>
             </div>
             <article class="modal-body">
@@ -55,8 +45,6 @@
                 일기 쓰기
                 </div>
               </main>
-              
-        <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script>
             let todoSendList = []
             $('.createDiary').submit((event) => {
@@ -91,6 +79,13 @@
                 })
               })
         </script>
-  
+        {% else %}
+        <div class="btn">
+          <button href="{% url 'login' %}">Login</button>
+          <br>
+          <br>
+          <button href="{% url 'signup' %}">Sign Up</button>
+        </div>
+        {% endif %}
     </div>
 {% endblock content %}

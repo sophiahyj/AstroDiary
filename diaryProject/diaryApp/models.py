@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 class Profile(models.Model):
     profile_image = models.ImageField(blank=True, null=True, upload_to="images")
     level = models.IntegerField(null=True)
-    user_created_at = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
         return self.user_created_at
@@ -20,5 +19,5 @@ class Diary(models.Model):
         return self.content
 
 class Likes(models.Model):  
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="likes")
-    diary_id = models.ForeignKey(Diary, on_delete=models.CASCADE, related_name="likes")
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="likes_user_id")
+    diary_id = models.ForeignKey(Diary, on_delete=models.CASCADE, related_name="likes_diary_id")
