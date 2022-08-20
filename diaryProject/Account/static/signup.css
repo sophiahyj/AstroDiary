@@ -27,6 +27,9 @@ input {
     top: 172px;
     margin: 0 auto;
     background: rgba(98, 104, 108, 0.75);
+    position: absolute;
+    z-index: 1;
+    margin-top: 100px;
 }
 
 p {
@@ -69,7 +72,6 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 200px;
 }
 
 .signup {
@@ -81,4 +83,10 @@ button {
 
 .login {
     color: #A5ADB2;
+}
+
+.logo {
+    position: absolute;
+    z-index: 1;
+    padding-top: 30px;
 }
