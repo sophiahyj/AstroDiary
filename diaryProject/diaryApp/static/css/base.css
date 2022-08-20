@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(209, 215, 221);
+}
+
+.body-container {
+    height: 812px;
+    width: 375px;
+    background-color: white;
+}
