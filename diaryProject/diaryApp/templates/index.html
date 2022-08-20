@@ -4,15 +4,17 @@
 <link rel="stylesheet" href="static/css/index.css"/>
 {% endblock style %}
 {% block js %}
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script defer src="./static/js/diary.js"></script>
 <script type="module" src="./static/js/index.js"></script>
 {% endblock js %}
 {% block content %}
     <div class="navbar_container">
         <li class="navbar_logo">
-            <img src="#">
+            <img src="#"/>
         </li>
         {% if user.is_authenticated %}
+        <input id="username" value={{user.username}}></input>
         <span class="navbar_menu_item">안녕하세요!, {{user.username}} 님!</span>
         <a href="{% url 'logout' %}">Logout</a>
         {% else %}
@@ -39,8 +41,8 @@
                     {% csrf_token %}
                     <h1>TO DOs</h1>
                     <span></span><br>
-                    <input id="todo">
-                    <button id="add-button">+</button>
+                    <input id="todo" name="todo"/>
+                    <button type="button" id="add-button">+</button>
                     <div id="todo-list"></div>
                     <h1>your diary</h1>
                     <input type="text" id="content" name="content" placeholder="일기를 적어주세요.">
@@ -55,13 +57,29 @@
                 </div>
               </main>
         <script>
+            let todoSendList = []
             $('.createDiary').submit((event) => {
                 event.preventDefault()
-                console.log("실행됨")
                 let form = $(".createDiary")[0]
                 let form_data = new FormData(form)
+                todos = todoSendList
                 content = $("#content").val()
-                form_data.append("name", content)
+                username = $("#username").val()
+                form_data.append("todos", todos)
+                form_data.append("content", content)
+                form_data.append("username", username)
+                console.log("todos", todos)
+                console.log("content", content)
+                console.log("username",username)
+                // FormData의 key 확인
+                for (let key of form_data.keys()) {
+                    console.log("key",key);
+                }
+                
+                // FormData의 value 확인
+                for (let value of form_data.values()) {
+                    console.log("val",value);
+                }
                 $.ajax({
                   type: "POST",
                   enctype: 'multipart/form-data',

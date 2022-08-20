@@ -41,13 +41,15 @@ def logout(request):
     return redirect("index")
 
 def index(request):
+    
     return render(request, 'index.html')
 
 @csrf_exempt
 def DiaryView(request):
     if request.method == 'POST':
         diary = Diary.objects.create(
-            todo = request.POST['todo'],
+            todos = request.POST['todos'],
             content = request.POST['content'],
+            creator = User.objects.get(username=request.POST['username']),
         )
         return JsonResponse({'msg': "link 생성완료"})

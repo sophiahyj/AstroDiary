@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const addButton = document.querySelector('#add-button')
     const todoList = document.querySelector('#todo-list')
     const alert = document.querySelector('span')
-
+    
       // '+' 버튼 익명 화살표 함수 
     const addTodo = () => {
         if (input.value !== '') {
@@ -16,7 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
           // 제거하기 버튼
             const deleteButton = document.createElement('button')
             deleteButton.textContent="delete"
+            
 
+            todoSendList.push(input.value)
+            console.log(todoSendList)
             text.textContent = input.value
             input.value=''
         
@@ -38,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           // 제거하기 버튼 클릭 이벤트 리스너
             deleteButton.addEventListener('click', (event) => {
+                todoSendList.
                 todoList.removeChild(event.currentTarget.parentNode)
             })
             input.value =''
