@@ -14,12 +14,9 @@ def signup(request):
             error = "이미 존재하는 아이디입니다."
             return render(request, "signup.html", {"error": error})
         new_user = User.objects.create_user(username=username, password=password)
-        new_profile = Profile.objects.get(id=new_user.id)
-        new_profile.profile_pic = profile_pic
-        new_profile.save()
         auth.login(request, new_user)
-        return redirect("index", new_user.id)
-        
+        return redirect("index")
+    
     return render(request, "signup.html")
 
 
