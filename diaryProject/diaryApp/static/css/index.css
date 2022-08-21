@@ -119,3 +119,16 @@ body {
   display: flex;
   flex-direction:row;
 }
+
+.user_info {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 250px;
+}
+
+.todo_group {
+  display: flex;
+  flex-direction:row;
+}
