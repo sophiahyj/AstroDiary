@@ -41,3 +41,23 @@ try {
         throw error;
     }
 };
+
+let state = 0;
+const fishingHandler = () => {
+    const astronaunt = document.getElementById('fishing');
+    if (state <= 2){
+        state++;
+    }
+    if (state === 0) {
+        astronaunt.src="http://localhost:8000/static/img/LV1_fishing.svg";
+    } else if (state === 1) {
+        astronaunt.src="http://localhost:8000/static/img/LV1_fish.svg";
+    } else if (state === 2) {
+        astronaunt.src="http://localhost:8000/static/img/LV1_fished.svg";
+    } else if (state === 3) {
+        showRandomDiary();
+        state = 0;
+        astronaunt.src="http://localhost:8000/static/img/LV1_fishing.svg";
+    }
+
+}
