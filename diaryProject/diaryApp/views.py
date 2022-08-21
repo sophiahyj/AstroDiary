@@ -60,11 +60,10 @@ def DiaryView(request):
             content = request.POST['content'],
             creator = User.objects.get(username=request.POST['username']),
         )
-        return JsonResponse({'msg': "link 생성완료"})
-    return redirect('detail', new_diary.pk)
+        return redirect('detail', new_diary.pk)
+    return render(request, 'detail/<int:diary_pk>')
 
 
 def detail(request, diary_pk):
     diary = Diary.objects.get(pk=diary_pk)
-
     return render(request, 'detail.html', {'diary': diary})
