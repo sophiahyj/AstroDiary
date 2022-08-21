@@ -2,13 +2,6 @@
     font-family: 'Laila', sans-serif;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
 input {
     width: 250px;
     padding: 20px 10px 10px;
@@ -26,7 +19,7 @@ input {
     left: 35px;
     top: 172px;
     margin: 0 auto;
-    background: rgba(98, 104, 108, 0.75);
+    background: rgba(98, 104, 108, 0.8);
     position: absolute;
     z-index: 1;
     margin-top: 100px;
@@ -39,33 +32,11 @@ p {
     font-weight: bolder;
 }
 
-a {
+.tab {
     text-align: center;
     color: white;
     font-size: 18px;
     text-decoration: none;
-}
-
-.loginbox {
-    margin-left: 20px;
-}
-
-.login_btn {
-    width: 100px;
-    height: 40px;
-    left: 68px;
-    top: 505px;
-    background: #896AC9;
-    border-radius: 12px;
-    border: 0px;
-    font-weight: bolder;
-    color: white;
-    font-size: 20px;
-}
-
-.login_btn {
-    display: flex;
-    justify-content: center;
 }
 
 .title {
@@ -75,13 +46,24 @@ a {
 }
 
 .login {
+    color: #A5ADB2;
+}
+.login.selected{
+    color: white;
     text-decoration: underline;
     text-underline-position: under;
-    text-decoration-color: #896AC9;
+    text-decoration-color: #6F46A7;
 }
 
 .signup {
     color: #A5ADB2;
+    margin-left: -150px;
+}
+.signup.selected {
+    color: white;
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-color: #896AC9;
     margin-left: -150px;
 }
 
@@ -95,4 +77,48 @@ a {
     position: absolute;
     z-index: 1;
     padding-top: 30px;
+}
+
+.login-section {
+    display: flex;
+}
+.login-section.hide {
+    display: none;
+}
+
+.signup-section {
+    display: flex;
+}
+.signup-section.hide {
+    display: none;
+}
+
+.loginbox {
+    margin-left: 20px;
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    left: 68px;
+    top: 505px;
+    background: #896AC9;
+    border-radius: 12px;
+    border: 0px;
+    font-weight: bolder;
+    color: white;
+    font-size: 20px;
+}
+.login_btn {
+    display: flex;
+    justify-content: center;
+}
+
+.signupbox {
+    margin-left: 20px;
+}
+
+.signup_btn {
+    display: flex;
+    justify-content: center;
 }
