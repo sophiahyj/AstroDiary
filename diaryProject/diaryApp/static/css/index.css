@@ -79,7 +79,7 @@ body {
   z-index: 1;
 }
 .modal-container {
-  z-index: 2;
+  z-index: 1;
 }
 .form-inner{
   display: flex;
