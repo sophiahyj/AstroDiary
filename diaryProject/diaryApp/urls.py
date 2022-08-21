@@ -21,7 +21,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', views.index, name="home"),
     path('fishing', views.fishing, name="fishing"),
-    path('background', views.background, name='background'),
 ]
 
 if settings.DEBUG: 
