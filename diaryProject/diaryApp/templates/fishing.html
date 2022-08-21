@@ -10,22 +10,21 @@
 {% endblock js %}
 {% block content %}
     <div id="main-container">
-        <div id="ex" class="example">
-            astro diary example
-            <button onclick="showRandomDiary()">click</button>
+        <div id="astro" class="astro">
+            <div class="description">
+                다른 우주인의<br>오늘은 어땠을까?
+            </div>
+            <img class="fishing" src="{% static 'img/LV1_fishing.svg'%}" onclick="showRandomDiary()"/>
         </div>
         <div id="random-diary" class="random-diary-modal hide">
             <div class="random-diary-paper">
                 <div class="random-diary-header">
-                    random random
-                    <button onclick="hideRandomDiary()">close</button>
+                    <span>00년 00월 00일<br>user의 일기</span>
+                    <img id="close" src="{% static 'assets/icons/close-x.svg'%}" onclick="hideRandomDiary()" />
                 </div>
                 <div class="random-diary-content">
-                    <div class="content content-title">
-                        00년 00월 00일<br>user의 일기
-                    </div>
                     <div class="content content-todo">
-                        <p>user님의 오늘의 Todo</p>
+                        <p>{{user.id}}님의 오늘의 Todo</p>
                     </div>
                     <div class="content content-diary">
                         <p>Q. 오늘 하루 중 가장 마음에 들었던 일은?</p>

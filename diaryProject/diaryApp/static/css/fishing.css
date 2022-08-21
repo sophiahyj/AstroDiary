@@ -9,14 +9,34 @@
     align-items: center;
 }
 
-.example {
+
+.astro {
     height: 50%;
-    width: 50%;
-    background-color: white;
+    width: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
-.example.hide {
+.astro.hide {
     display: none;
+}
+
+.description {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+}
+
+.fishing {
+    height: auto;
+    width: 276px;
+    bottom: 0px;
 }
 
 .random-diary-modal {
@@ -25,6 +45,7 @@
     border-radius: 10px;
     position: absolute;
     z-index: 2;
+    margin-top: 20px;
     background: linear-gradient(180deg, rgba(25, 71, 117, 0.95), rgba(43, 82, 122, 0.95), rgba(95, 142, 189, 0.95));
     color: white;
     display: flex;
@@ -60,23 +81,26 @@
     align-items: center;
 }
 .random-diary-header {
-    height: 80.5px;
-    width: 100%;
+    height: 90px;
+    width: 90%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+}
+.random-diary-header span {
+    margin-top: 5px;
+    margin-left: 20px;
+    font-size: 21px;
 }
 .random-diary-content {
-    height: 520.5px;
+    height: 500.5px;
     width: 100%;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .content {
-    width: 100%;
-}
-.content-title {
-    margin-top: 50px;
-    display: flex;
-    align-items: center;
+    width: 85%;
 }
