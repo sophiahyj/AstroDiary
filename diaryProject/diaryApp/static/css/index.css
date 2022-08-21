@@ -147,16 +147,13 @@ body {
   margin-top: 1%;
 }
 .logouthref{
-  margin-right: 10%;
-  margin: 6%;
+  margin-right: 15%;
 }
 
 .todo_group {
   display: flex;
   flex-direction:row;
 }
-
-
 .navbar_menu_item {
   width: 200px ;
   position: absolute;
@@ -224,3 +221,7 @@ input::placeholder {
   font-family: 'Noto Serif KR', serif;
 }
 
+.navbar_container {
+  position: absolute;
+  right: 10px;
+}
