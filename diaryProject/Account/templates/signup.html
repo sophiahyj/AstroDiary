@@ -1,0 +1,40 @@
+{% extends 'diaryApp/base.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static 'signup.css' %}">
+{% endblock style %}
+{% block content %}
+    <div class="navbar">
+        <div class="logo">
+            <img src="../static/images/우주 일기.png">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="title">
+            <a class="login" href="{% url 'login' %}" style="margin-top: 30px;">Login</a>
+            <a href="{% url 'signup' %}" class="signup" style="margin-top: 30px;">Sign Up</a>
+        </div>
+        <section id="signup">
+            <form method="POST">
+                {% csrf_token %}
+                {% if error %}
+                <p class="error">{{error}}</p>
+                {% endif %}
+                <div class="signupbox">
+                    <!-- <p>Profile Picture</p>
+                    <input name="image" type="file"> -->
+                    <p>Username</p>
+                    <input type="text" name="username">
+                    <p>Password</p>
+                    <input type="password" name="password">
+                    <br>
+                    <br>
+                    <div class="signup_btn">
+                        <button>Sign Up</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+{% endblock content %}
