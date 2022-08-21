@@ -4,6 +4,7 @@ from django.contrib import auth
 from .models import Diary
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
+from random import randint
 
 # Create your views here.
 def logout(request):
@@ -15,7 +16,11 @@ def index(request):
     return render(request, 'index.html')
 
 def fishing(request):
-    return render(request, 'fishing.html')
+    user = request.user
+    diaryList = Diary.objects.exclude(creator=user.id)
+    rand = randint(0, len(diaryList)-1)
+    randomDiary = diaryList[rand]
+    return render(request, 'fishing.html', {'randomDiary': randomDiary})
 
 def background(request):
     return render(request, 'background.html')
