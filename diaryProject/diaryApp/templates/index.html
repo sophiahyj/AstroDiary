@@ -96,9 +96,9 @@
         </div>
       <div class="btn_register">
         <button type="button" onclick="location.href='{% url 'login' %}'">Login</button>
+        {% comment %} <br>
         <br>
-        <br>
-        <button style="margin-top: 30px;" type="button" onclick="location.href='{% url 'signup' %}'">Sign Up</button>
+        <button style="margin-top: 30px;" type="button" onclick="location.href='{% url 'login' %}'">Sign Up</button> {% endcomment %}
       </div>
       {% endif %}
     </div>
