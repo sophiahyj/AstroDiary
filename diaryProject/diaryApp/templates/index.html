@@ -4,21 +4,6 @@
 <link rel="stylesheet" href="{% static 'css/index.css'%}"/>
 {% endblock style %}
 {% block js %}
-<<<<<<< HEAD
-<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script defer src="{% static 'js/diary.js' %}"></script>
-<script type="module" src="{% static 'js/index.mjs' %}"></script>
-{% endblock js %}
-{% block content %}
-  <div class="container">
-    <div class="user_info">
-      {% if user.is_authenticated %}
-        <input id="username" value={{user.username}} style="display:none;"></input>
-        <span class="navbar_menu_item">안녕하세요, {{user.username}} 님!</span>
-        <a href="{% url 'logout' %}" style="color: white;">Logout</a>
-      </div>
-      <div class="modal-container">
-=======
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 {% endblock js %}
 {% block content %}
@@ -26,13 +11,11 @@
       {% if user.is_authenticated %}
       <div class="user_info" >
         <input id="username" value={{user.username}} style="display:none;"></input>
-        <span class="navbar_menu_item">안녕하세요, {{user.username}} 님!</span>
-        <a href="{% url 'logout' %}">Logout</a>
+        <span class="navbar_menu_item" style="font-family: 'Noto Serif KR', serif;">안녕하세요, {{user.username}} 님!</span>
+        <a href="{% url 'logout' %}" style="font-family: 'Noto Serif KR', serif; color: white;">Logout</a>
       </div>
       <div class="modal-container">
-        <img src="{% static 'images/frame.png' %}" class="frame">
         <img src="{% static 'img/우주인.svg' %}" class="astroman">
->>>>>>> fe10d400ed0c3a9600a9a1d8995b15cca4f695ec
         <div class="modal">
           <div class="modal-header">
             <p class="modal-title">DIARY</p>
@@ -46,24 +29,20 @@
                   {% csrf_token %}
                   <div class="form-inner">
                     <div class="todoadd">
-                      <h1>TO DOs</h1>
+                      <h3 style="color: #28104E;">TO-DOs</h3>
                       <span></span>
                       <div class="todo-input">
-                        <input id="todo" name="todo"/>
-                        <button type="button" id="add-button">+</button>
+                        <input id="todo" name="todo" placeholder="오늘 당신의 할 일은?" style="font-family:'Noto Serif KR', serif;"/>
+                        <button type="button" id="add-button" style="margin-left: 20px;">+</button>
                       </div>
 
                       <div id="todo-list"></div>
                     </div>
-
-                    <h1>your diary</h1>
+                    <div class="diary">
+                      <h3 style="color: #28104E;">Diary</h3>
                       <input type="text" id="content" name="content" placeholder="일기를 적어주세요.">
-                      
-<<<<<<< HEAD
-                      <a><button onclick="alert('등록되었습니다!')"; return false;>등록</button></a>
-=======
-                      <button>등록</button>
->>>>>>> fe10d400ed0c3a9600a9a1d8995b15cca4f695ec
+                      <button onclick="alert('등록되었습니다!'); location.href='home/fishing';", return false; href="{% url 'fishing' %}">등록</button>
+                    </div>
                   </div>    
               </form>      
           </article>
@@ -71,14 +50,11 @@
       </div>
             <main class="flex">
               <div class="btn-open-modal btn bg-btn shadow text-center">
-              일기 쓰기
+              <p class="diary_write_btn">일기 쓰기</p>
               </div>
             </main>
-<<<<<<< HEAD
-=======
       <script defer src="{% static 'js/diary.js' %}"></script>
       <script type="module" src="{% static 'js/index.mjs' %}"></script>
->>>>>>> fe10d400ed0c3a9600a9a1d8995b15cca4f695ec
       <script>
           let todoSendList = []
           $('.createDiary').submit((event) => {
@@ -116,11 +92,9 @@
       {% else %}
       <div class="navbar_container">
         <div class="navbar_logo">
-<<<<<<< HEAD
-            <img style="margin-top: 50px;" src="../static/images/우주 일기.png"/>
-=======
+
             <img style="margin-top: 50px;" src="{% static 'images/우주 일기.png' %}"/>
->>>>>>> fe10d400ed0c3a9600a9a1d8995b15cca4f695ec
+
         </div>
       <div class="btn_register">
         <button type="button" onclick="location.href='{% url 'login' %}'">Login</button>
