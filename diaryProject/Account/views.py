@@ -12,16 +12,17 @@ def signup(request):
         found_user = User.objects.filter(username=username)
         if len(found_user):
             error = "이미 존재하는 아이디입니다."
-            return render(request, "signup.html", {"error": error})
-        new_user = User.objects.create_user(username=username, password=password)
-        auth.login(request, new_user)
-        return redirect("index")
-    
-    return render(request, "signup.html")
+            return redirect("/Account/login", {"signupError": error})
+        else: 
+            new_user = User.objects.create_user(username=username, password=password)
+            auth.login(request, new_user)
+            return redirect("index")
 
 
 def login(request):
-    if request.method == "POST":
+    if request.method == "GET":
+        return render(request, "login.html")
+    elif request.method == "POST":
         username=request.POST['username']
         password = request.POST['password']
         user = auth.authenticate(request, username=username, password=password)
@@ -29,15 +30,9 @@ def login(request):
             auth.login(request, user)
             return redirect("index")
         error = "아이디 혹은 비밀번호가 틀립니다."
-        return render(request, "login.html", {"error": error})
-
-    return render(request, "login.html")
-
+        return render(request, "login.html", {"loginError": error})
 
 def logout(request):
     auth.logout(request)
 
     return redirect("index")
-
-def index(request):
-    return render(request, 'index.html')
