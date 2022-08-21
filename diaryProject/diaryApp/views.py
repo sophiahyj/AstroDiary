@@ -61,4 +61,4 @@ def DiaryView(request):
             creator = User.objects.get(username=request.POST['username']),
         )
         return JsonResponse({'msg': "link 생성완료"})
-        
+    
