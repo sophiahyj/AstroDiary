@@ -125,12 +125,24 @@ body {
 .user_info {
   color: white;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   width: 250px;
+  margin: 6%;
 }
 
 .todo_group {
   display: flex;
   flex-direction:row;
+}
+
+.navbar_menu_item {
+  font-size: larger;
+  position: absolute;
+  left: 50px;
+}
+
+.user_info a {
+  position: absolute;
+  right: 50px;
 }
