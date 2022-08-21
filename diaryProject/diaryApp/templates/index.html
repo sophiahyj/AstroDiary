@@ -11,18 +11,14 @@
     <div class="user_info">
       {% if user.is_authenticated %}
         <input id="username" value={{user.username}} style="display:none;"></input>
-<<<<<<< HEAD
         <span class="navbar_menu_item" style="font-family: 'Noto Serif KR', serif;">안녕하세요, {{user.username}} 님!</span>
-        <a href="{% url 'logout' %}" style="font-family: 'Noto Serif KR', serif; color: white;">Logout</a>
-      </div>
+        <div class="links">
+          <a href="{% url 'logout' %}" style="font-family: 'Noto Serif KR', serif; color: white;" class="logouthref">Logout</a>
+          <a href="{% url 'mypage' %}" style="font-family: 'Noto Serif KR', serif; color: white;">MyPage</a>
+        </div>
+
+    </div>
       <div class="modal-container">
-=======
-        <span class="navbar_menu_item">안녕하세요, {{user.username}} 님!</span>
-        <a href="{% url 'logout' %}" style="color: white;">Logout</a>
-      </div>
-      <div class="modal-container">
-        <!-- <img src="{% static 'images/frame.png' %}" class="frame"> -->
->>>>>>> 5bfeb874112a92832275a04614196b9f45fbd865
         <img src="{% static 'img/우주인.svg' %}" class="astroman">
         <div class="modal">
           <div class="modal-header">
@@ -40,15 +36,15 @@
                       <h3 style="color: #28104E;">TO-DOs</h3>
                       <span></span>
                       <div class="todo-input">
-                        <input id="todo" name="todo" placeholder="오늘 당신의 할 일은?" style="font-family:'Noto Serif KR', serif;"/>
+                        <input id="todo" name="todo" placeholder="오늘 당신의 할 일은?" style="font-family:'Noto Serif KR', serif; background-color:transparent;">
                         <button type="button" id="add-button" style="margin-left: 20px;">+</button>
                       </div>
 
-                      <div id="todo-list"></div>
+                      <div id="todo-list" style="color:white;"></div>
                     </div>
                     <div class="diary">
                       <h3 style="color: #28104E;">Diary</h3>
-                      <input type="text" id="content" name="content" placeholder="일기를 적어주세요.">
+                      <input type="text" id="content" name="content" placeholder="일기를 적어주세요."  style="font-family:'Noto Serif KR', serif;border:1px; border-color:#28104E; background-color:transparent;">
                       <button onclick="alert('등록되었습니다!'); location.href='home/fishing';", return false; href="{% url 'fishing' %}">등록</button>
                     </div>
                   </div>    

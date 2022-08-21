@@ -134,7 +134,20 @@ body {
   flex-direction: row;
   justify-content: space-between;
   width: 250px;
-  margin: 6%;
+  margin-left: 9%;
+  margin-top: 7%;
+}
+.links{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 120px;
+  font-size: small;
+  margin-left: 85%;
+  margin-top: 1%;
+}
+.logouthref{
+  margin-right: 10%;
 }
 
 .todo_group {
@@ -144,15 +157,15 @@ body {
 
 
 .navbar_menu_item {
-  font-size: larger;
+  width: 200px ;
   position: absolute;
-  left: 50px;
+  
 }
 
-.user_info a {
+/* .user_info a {
   position: absolute;
   right: 50px;
-}
+} */
 
 .btn-open-modal {
   width: 247px;
@@ -203,3 +216,10 @@ input[type=text] {
   margin-left: 95px;
 }
 
+input{
+  color: white;
+}
+input::placeholder {
+  color: white;
+  font-family: 'Noto Serif KR', serif;
+}
