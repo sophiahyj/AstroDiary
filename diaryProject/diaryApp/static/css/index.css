@@ -18,12 +18,28 @@ body {
   font-family: 'Laila', sans-serif;
 }
 
+.modal {
+  background-image: url("http://localhost:8000/static/img/diary-border.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.modal-container {
+  background: linear-gradient(180deg, #6F46A7 0%, #896AC9 33.85%, #C99DDD 91.15%);
+}
+
+
 .container {
   width: 100%;
   height: 100%;
   position: absolute;
+<<<<<<< HEAD
+  z-index: 1;
+=======
   z-index: 2;
 
+>>>>>>> 5bfeb874112a92832275a04614196b9f45fbd865
 }
 
 .btn_register button {
@@ -66,8 +82,7 @@ body {
 
 .flex {
   /* display: flex; */
-  /* position: absolute;
-  left : 90%;
+  /* left : 90%;
   right: 50%; */
   /* justify-content: center;
   flex-direction: column;
@@ -81,26 +96,29 @@ body {
 .modal-container {
   z-index: 2;
 }
+
 .form-inner{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  align-content: center;
-  left: 100px;
+  padding-left: 40px;
+  padding-top: 15px;
 }
+
 .createDiary {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .todoadd{
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
+=======
   align-content: center;
   justify-content: center;
   text-align: center;
   z-index: 500;
+>>>>>>> 5bfeb874112a92832275a04614196b9f45fbd865
 }
 .todo-input{
   display: flex;
@@ -133,4 +151,53 @@ body {
 .todo_group {
   display: flex;
   flex-direction:row;
+}
+
+.btn-open-modal {
+  width: 247px;
+  height: 57px;
+  color: white;
+  text-align: center;
+  align-items: center;
+}
+
+.diary_write_btn {
+  font-family: 'Noto Serif KR', serif;
+}
+
+.modal-title {
+  font-size: 30px;
+  padding-top: 50px;
+  font-weight: bold;
+  color: #28104E;
+}
+
+h3 {
+  font-size: 23px;
+}
+
+input[type=text] {
+  width: 270px;
+  height: 150px;
+  font-family: 'Noto Serif KR', serif;
+  font-size: 12px;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+}
+
+.register_btn {
+  width: 20px;
+}
+
+.diary button {
+  width: 70px;
+  height: 30px;
+  border-radius: 12px;
+  border: 0px;
+  font-family: 'Noto Serif KR', serif;
+  color: black;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-left: 95px;
 }
