@@ -4,11 +4,7 @@
 <link rel="stylesheet" href="static/css/index.css"/>
 {% endblock style %}
 {% block js %}
-<<<<<<< HEAD
-<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
-=======
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
->>>>>>> c765f483627b322bd7a7705240e2e85242517e1e
 <script defer src="{% static 'js/diary.js' %}"></script>
 <script type="module" src="{% static 'js/index.mjs' %}"></script>
 {% endblock js %}
@@ -21,12 +17,8 @@
         <a href="{% url 'logout' %}">Logout</a>
       </div>
       <div class="modal-container">
-<<<<<<< HEAD
         <img src="../static/images/frame.png" class="frame">
         <img src="../static/img/우주인.svg" class="astroman">
-  
-=======
->>>>>>> c765f483627b322bd7a7705240e2e85242517e1e
         <div class="modal">
           <div class="modal-header">
             <p class="modal-title">DIARY</p>
@@ -37,7 +29,6 @@
           <article class="modal-body">
               <form class="createDiary" method="POST" enctype="multipart/form-data">
                   {% csrf_token %}
-<<<<<<< HEAD
                   <div class="form-inner">
                     <div class="todoadd">
                       <h1>TO DOs</h1>
@@ -58,23 +49,7 @@
               </form>      
           </article>
         </div>
-      </div>        
-=======
-                  <h1>TO DOs</h1>
-                  <span></span><br>
-                  <div class="todo_group">
-                    <input id="todo" name="todo"/>
-                    <button type="button" id="add-button" style="margin-left: 20px;">+</button>
-                  </div>
-                  <div id="todo-list"></div>
-                  <h1>your diary</h1>
-                  <input type="text" id="content" name="content" placeholder="일기를 적어주세요."></input>
-                  <button>등록</button>
-              </form>
-          </article>
-        </div>
       </div>
->>>>>>> c765f483627b322bd7a7705240e2e85242517e1e
             <main class="flex">
               <div class="btn-open-modal btn bg-btn shadow text-center">
               일기 쓰기
