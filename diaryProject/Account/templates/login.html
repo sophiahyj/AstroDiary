@@ -3,34 +3,55 @@
 {% block style %}
     <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
 {% endblock style %}
+{% block js %}
+<script src="{% static 'js/login.js'%}"></script>
+{% endblock js%}
 {% block content %}
     <div class="navbar">
         <div class="logo">
             <img src="../static/images/우주 일기.png">
         </div>
     </div>
-    <br>
     <div class="container">
         <div class="title">
-            <a class="login" href="{% url 'login' %}" style="margin-top: 30px;">Login</a>
-            <a href="{% url 'signup' %}" class="signup" style="margin-top: 30px;">Sign Up</a>
+            <span id="login-tab" class="login selected tab" style="margin-top: 30px;" onclick="showLogin()">Login</span>
+            <span id="signup-tab" class="signup tab" style="margin-top: 30px;" onclick="showSignup()">Sign Up</span>
         </div>
-        <section id="login">
+        <section id="login-section" class="login-section">
             <form method="POST">
                 {% csrf_token %}
-                {% if error %}
-                <p class="error">{{error}}</p>
+                {% if loginError %}
+                <p class="error">{{loginError}}</p>
                 {% endif %}
                 <div class="loginbox">
                     <p>Username</p>
                     <input type="text" name="username">
                     <p>Password</p>
                     <input type="password" name="password">
+                    <br>
+                    <br>
+                    <div class="login_btn">
+                        <button>Login</button>
+                    </div>
                 </div>
-                <br>
-                <br>
-                <div class="login_btn">
-                    <button>Login</button>
+            </form>
+        </section>
+        <section id="signup-section" class="signup-section hide">
+            <form action="/Account/signup" method="POST">
+                {% csrf_token %}
+                {% if signupError %}
+                <p class="error">{{signupError}}</p>
+                {% endif %}
+                <div class="signupbox">
+                    <p>Username</p>
+                    <input type="text" name="username">
+                    <p>Password</p>
+                    <input type="password" name="password">
+                    <br>
+                    <br>
+                    <div class="signup_btn">
+                        <button>Sign Up</button>
+                    </div>
                 </div>
             </form>
         </section>
