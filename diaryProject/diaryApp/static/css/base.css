@@ -7,7 +7,7 @@ body {
 }
 
 .body-container {
-    min-height: 100vh;
+    min-height: 812px;
     width: 375px;
     background-color: #161b39;
     position: relative;
