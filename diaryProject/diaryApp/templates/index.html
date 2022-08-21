@@ -11,18 +11,10 @@
     <div class="user_info">
       {% if user.is_authenticated %}
         <input id="username" value={{user.username}} style="display:none;"></input>
-<<<<<<< HEAD
         <span class="navbar_menu_item" style="font-family: 'Noto Serif KR', serif;">안녕하세요, {{user.username}} 님!</span>
         <a href="{% url 'logout' %}" style="font-family: 'Noto Serif KR', serif; color: white;">Logout</a>
       </div>
       <div class="modal-container">
-=======
-        <span class="navbar_menu_item">안녕하세요, {{user.username}} 님!</span>
-        <a href="{% url 'logout' %}" style="color: white;">Logout</a>
-      </div>
-      <div class="modal-container">
-        <!-- <img src="{% static 'images/frame.png' %}" class="frame"> -->
->>>>>>> 5bfeb874112a92832275a04614196b9f45fbd865
         <img src="{% static 'img/우주인.svg' %}" class="astroman">
         <div class="modal">
           <div class="modal-header">
