@@ -148,6 +148,7 @@ body {
 }
 .logouthref{
   margin-right: 10%;
+  margin: 6%;
 }
 
 .todo_group {
@@ -159,13 +160,12 @@ body {
 .navbar_menu_item {
   width: 200px ;
   position: absolute;
-  
 }
 
-/* .user_info a {
+.user_info a {
   position: absolute;
   right: 50px;
-} */
+}
 
 .btn-open-modal {
   width: 247px;
@@ -223,3 +223,4 @@ input::placeholder {
   color: white;
   font-family: 'Noto Serif KR', serif;
 }
+
