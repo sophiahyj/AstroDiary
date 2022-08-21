@@ -17,6 +17,7 @@
     border: 10px solid #fadc72;   
     background-color: white;
     margin-left: 40px;
+    margin-top: 10%;
 }
 
 .name-wrap {
@@ -31,6 +32,7 @@
 }
 
 .level-name {
+    margin-top: 5%;
     background-color: #fadc72;
     padding: 4px 4px;
     border-radius: 10px;
@@ -46,7 +48,7 @@
 
 
 .fishing-bag > img {
-    margin-top: 0%;
+    margin-top: 10%;
     margin-left: 20px;
     width: 85%;
     height: 90%;
@@ -54,7 +56,7 @@
 
 .calendar {
     width: 90%;
-    margin: 0px auto;
+    margin: 10% auto;
     height: 40%;
     background-color: rgba(255, 255, 255, 0.384);
     border-radius: 10px;
@@ -152,9 +154,8 @@
 
 .monthly-total {
     position: relative;
-    margin-top: 5%;
-    width: 90%;
-    height: 60%;
+    width: 100%;
+    height: 70%;
     background-color: white;
     border-radius: 10px;
     margin-right: 20px;

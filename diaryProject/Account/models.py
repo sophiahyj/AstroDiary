@@ -24,4 +24,4 @@ class Diary(models.Model):
     creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name="creator")
 
     def __str__(self):
-        return self.creator.name
+        return self.creator.username

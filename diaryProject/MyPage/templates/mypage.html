@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'diaryApp/base.html' %}
 {% load static %}
 {% block style %}
 <link rel="stylesheet" type="text/css" href="{% static 'mypage.css' %}">
@@ -8,7 +8,7 @@
     <div class="basic-info">
         <div class="profile"></div>
         <div class="name-wrap">
-            <div class="nick-name">Jihoo21_m</div>
+            <div class="nick-name">{{ user.username }}</div>
             <div class="level-name">발자국을 남긴 우주인</div>
         </div>
     </div>
@@ -20,9 +20,9 @@
         <div class="flex-col">
             <div class="year"></div>
             <div class="calendar_nav">
-                <button class="nav-btn month-prev"><img src="https://postfiles.pstatic.net/MjAyMjA4MjFfMjI5/MDAxNjYxMDI2NTU2Mjgw.WZFDtS4PT7rJRRsCzRhH6Oy3-zcQLxAwHXHBDhSdHgIg.kOJc4U5ykZSvPMIgh2ggyid-JT-HZFCYGO3g5sN7vg0g.PNG.ahrefhoo/Polygon_1.png?type=w966"></button>
+                <button class="nav-btn month-prev" onclick="changeMonth('previous');"><img src="https://postfiles.pstatic.net/MjAyMjA4MjFfMjI5/MDAxNjYxMDI2NTU2Mjgw.WZFDtS4PT7rJRRsCzRhH6Oy3-zcQLxAwHXHBDhSdHgIg.kOJc4U5ykZSvPMIgh2ggyid-JT-HZFCYGO3g5sN7vg0g.PNG.ahrefhoo/Polygon_1.png?type=w966"></button>
                 <div class="month"></div>
-                <button class="nav-btn month-next"><img src="https://postfiles.pstatic.net/MjAyMjA4MjFfNCAg/MDAxNjYxMDI2NTUwOTI4.hezGFhxO-nzprIQnGwRvi1MG0c9eMDyNdCC2S7TrVngg.PnUCDcsOj1vo5HBheYLnLc3pbK2iHihANzC7oS4T_Pog.PNG.ahrefhoo/Polygon_2.png?type=w966"></button>
+                <button class="nav-btn month-next" onclick="changeMonth('next');" ><img src="https://postfiles.pstatic.net/MjAyMjA4MjFfNCAg/MDAxNjYxMDI2NTUwOTI4.hezGFhxO-nzprIQnGwRvi1MG0c9eMDyNdCC2S7TrVngg.PnUCDcsOj1vo5HBheYLnLc3pbK2iHihANzC7oS4T_Pog.PNG.ahrefhoo/Polygon_2.png?type=w966"></button>
             </div>
             <div class="monthly-total">
                 <div class="this-month">이달의 탐사</div>
@@ -41,6 +41,9 @@
             <div class="day">FRI</div>
             <div class="day">SAT</div>
         </div>
+        {% for diary in diarys %}
+            <p style="visibility: hidden;" id="diarys">{{ diary.diary_created_at }}</p>
+        {% endfor %}
         <div class="dates"></div>
     </div>
     <script src="{% static 'js/calendar.js' %}"></script>
@@ -53,4 +56,49 @@
             </a>
         </div>
     </div>
+
+
+    <script>
+        const changeMonth = (type) => {
+            MonthLooking = document.querySelector('.month').innerHTML;
+            MonthLooking = Number(MonthLooking);
+
+            YearLooking = document.querySelector('.year').innerHTML;
+            YearLooking = Number(YearLooking);
+
+            console.log(YearLooking)
+
+            /* 날짜 조정용 조건문 */
+            if (type == 'next'){
+                if(MonthLooking == 12){
+                    MonthLooking = 1;
+                    YearLooking += 1;
+                }
+                else {
+                    MonthLooking += 1;
+                }
+            }
+            else if (type == 'previous'){
+                if(MonthLooking == 1){
+                    MonthLooking = 12;
+                    YearLooking -= 1;
+                }
+                else {
+                    MonthLooking -= 1;
+                }
+            }
+
+            fetch('/mypage/' + YearLooking + '/' + MonthLooking, {
+                method: "POST",
+            })
+            .then(response => console.log(response))
+        } 
+
+        const diary = document.getElementById('diarys').innerHTML
+        console.log(diary)
+        console.log(diary.indexOf('.'))
+
+
+
+    </script>
 {% endblock content %}
