@@ -50,9 +50,9 @@ a {
     margin-left: 20px;
 }
 
-button {
-    width: 246px;
-    height: 57px;
+.login_btn {
+    width: 100px;
+    height: 40px;
     left: 68px;
     top: 505px;
     background: #896AC9;

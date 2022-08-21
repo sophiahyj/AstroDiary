@@ -1,12 +1,10 @@
 {% extends 'diaryApp/base.html' %}
 {% load static %}
 {% block style %}
-<link rel="stylesheet" href="static/css/index.css"/>
+<link rel="stylesheet" href="{% static 'css/index.css'%}"/>
 {% endblock style %}
 {% block js %}
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script defer src="{% static 'js/diary.js' %}"></script>
-<script type="module" src="{% static 'js/index.mjs' %}"></script>
 {% endblock js %}
 {% block content %}
   <div class="container">
@@ -17,27 +15,36 @@
         <a href="{% url 'logout' %}">Logout</a>
       </div>
       <div class="modal-container">
+        <img src="{% static 'images/frame.png' %}" class="frame">
+        <img src="{% static 'img/우주인.svg' %}" class="astroman">
         <div class="modal">
           <div class="modal-header">
             <p class="modal-title">DIARY</p>
             <button class="modal-close">
-              <img src="static/assets/icons/close-x.svg" alt="close" />
+              <img src="{% static 'assets/icons/close-x.svg' %}" alt="close" />
             </button>
           </div>
           <article class="modal-body">
               <form class="createDiary" method="POST" enctype="multipart/form-data">
                   {% csrf_token %}
-                  <h1>TO DOs</h1>
-                  <span></span><br>
-                  <div class="todo_group">
-                    <input id="todo" name="todo"/>
-                    <button type="button" id="add-button" style="margin-left: 20px;">+</button>
-                  </div>
-                  <div id="todo-list"></div>
-                  <h1>your diary</h1>
-                  <input type="text" id="content" name="content" placeholder="일기를 적어주세요."></input>
-                  <button>등록</button>
-              </form>
+                  <div class="form-inner">
+                    <div class="todoadd">
+                      <h1>TO DOs</h1>
+                      <span></span>
+                      <div class="todo-input">
+                        <input id="todo" name="todo"/>
+                        <button type="button" id="add-button">+</button>
+                      </div>
+
+                      <div id="todo-list"></div>
+                    </div>
+
+                    <h1>your diary</h1>
+                      <input type="text" id="content" name="content" placeholder="일기를 적어주세요.">
+                      
+                      <button>등록</button>
+                  </div>    
+              </form>      
           </article>
         </div>
       </div>
@@ -46,6 +53,8 @@
               일기 쓰기
               </div>
             </main>
+      <script defer src="{% static 'js/diary.js' %}"></script>
+      <script type="module" src="{% static 'js/index.mjs' %}"></script>
       <script>
           let todoSendList = []
           $('.createDiary').submit((event) => {
@@ -83,7 +92,7 @@
       {% else %}
       <div class="navbar_container">
         <div class="navbar_logo">
-            <img style="margin-top: 50px;" src="../static/images/우주 일기.png"/>
+            <img style="margin-top: 50px;" src="{% static 'images/우주 일기.png' %}"/>
         </div>
       <div class="btn_register">
         <button type="button" onclick="location.href='{% url 'login' %}'">Login</button>
@@ -94,5 +103,6 @@
       {% endif %}
     </div>
   </div>
+
 
 {% endblock content %}
