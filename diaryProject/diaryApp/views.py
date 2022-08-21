@@ -66,5 +66,4 @@ def DiaryView(request):
 
 def detail(request, diary_pk):
     diary = Diary.objects.get(pk=diary_pk)
-
-    return render(request, 'detail.html', {'diary': diary})        
+    return render(request, 'detail.html', {'diary': diary})

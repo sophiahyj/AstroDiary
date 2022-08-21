@@ -38,7 +38,6 @@ body {
   
 }
 
-
 .navbar_logo {
   margin-top: -10px;
 }
@@ -80,7 +79,7 @@ body {
   z-index: 1;
 }
 .modal-container {
-  z-index: 2;
+  z-index: 1;
 }
 .form-inner{
   display: flex;
@@ -107,6 +106,19 @@ body {
   flex-direction: row;
 }
 
+
+.user_info {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 250px;
+}
+
+.todo_group {
+  display: flex;
+  flex-direction:row;
+}
 
 .user_info {
   color: white;

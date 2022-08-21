@@ -9,15 +9,30 @@
 <script src="{% static 'js/fishing.js' %}"></script>
 {% endblock js %}
 {% block content %}
-    <div id="background-container">
-        <canvas id="canvas">
-        </canvas>
-        <div id="main-container" onclick="showRandomDiary()">
-            <div id="random-diary" class="random-diary-modal hide">
-                random diary
-                <button onclick="hideRandomDiary()">close</button>
-            </div>
+    <div id="main-container">
+        <div id="ex" class="example">
+            astro diary example
             <button onclick="showRandomDiary()">click</button>
+        </div>
+        <div id="random-diary" class="random-diary-modal hide">
+            <div class="random-diary-paper">
+                <div class="random-diary-header">
+                    random random
+                    <button onclick="hideRandomDiary()">close</button>
+                </div>
+                <div class="random-diary-content">
+                    <div class="content content-title">
+                        00년 00월 00일<br>user의 일기
+                    </div>
+                    <div class="content content-todo">
+                        <p>user님의 오늘의 Todo</p>
+                    </div>
+                    <div class="content content-diary">
+                        <p>Q. 오늘 하루 중 가장 마음에 들었던 일은?</p>
+                    </div>
+                </div>
+                <img src="{% static 'img/diary-inner-astro.svg'%}"" />
+            </div>
         </div>
     </div>
     
