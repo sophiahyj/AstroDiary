@@ -19,7 +19,7 @@ input {
     left: 35px;
     top: 172px;
     margin: 0 auto;
-    background: rgba(98, 104, 108, 0.75);
+    background: rgba(98, 104, 108, 0.8);
     position: absolute;
     z-index: 1;
     margin-top: 100px;
@@ -52,7 +52,7 @@ p {
     color: white;
     text-decoration: underline;
     text-underline-position: under;
-    text-decoration-color: #896AC9;
+    text-decoration-color: #6F46A7;
 }
 
 .signup {

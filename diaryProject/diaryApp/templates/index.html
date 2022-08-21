@@ -8,11 +8,11 @@
 {% endblock js %}
 {% block content %}
   <div class="container">
+    <div class="user_info">
       {% if user.is_authenticated %}
-      <div class="user_info" >
         <input id="username" value={{user.username}} style="display:none;"></input>
         <span class="navbar_menu_item">안녕하세요, {{user.username}} 님!</span>
-        <a href="{% url 'logout' %}">Logout</a>
+        <a href="{% url 'logout' %}" style="color: white;">Logout</a>
       </div>
       <div class="modal-container">
         <img src="{% static 'images/frame.png' %}" class="frame">
@@ -41,8 +41,7 @@
 
                     <h1>your diary</h1>
                       <input type="text" id="content" name="content" placeholder="일기를 적어주세요.">
-                      
-                      <button>등록</button>
+                      <a><button onclick="alert('등록되었습니다!')"; return false;>등록</button></a>
                   </div>    
               </form>      
           </article>
@@ -106,3 +105,4 @@
 
 
 {% endblock content %}
+
