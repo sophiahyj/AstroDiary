@@ -27,6 +27,9 @@ input {
     top: 172px;
     margin: 0 auto;
     background: rgba(98, 104, 108, 0.75);
+    position: absolute;
+    z-index: 1;
+    margin-top: 100px;
 }
 
 p {
@@ -47,9 +50,9 @@ a {
     margin-left: 20px;
 }
 
-button {
-    width: 246px;
-    height: 57px;
+.login_btn {
+    width: 100px;
+    height: 40px;
     left: 68px;
     top: 505px;
     background: #896AC9;
@@ -69,7 +72,6 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 200px;
 }
 
 .login {
@@ -87,4 +89,10 @@ button {
     font-family: 'Hahmlet', serif;
     font-weight: light;
     margin-left: 20px;
+}
+
+.logo {
+    position: absolute;
+    z-index: 1;
+    padding-top: 30px;
 }
