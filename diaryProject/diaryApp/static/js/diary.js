@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const text = document.createElement('span');
           // 제거하기 버튼
             const deleteButton = document.createElement('button')
-            deleteButton.textContent="delete"
+            deleteButton.textContent="x"
 
 
             todoSendList.push(input.value)
