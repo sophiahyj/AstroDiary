@@ -1,0 +1,30 @@
+
+
+.login_btn {
+    width: 100px;
+    height: 40px;
+    left: 68px;
+    top: 505px;
+    background: #896AC9;
+    border-radius: 12px;
+    border: 0px;
+    font-weight: bolder;
+    color: white;
+    font-size: 20px;
+}
+
+.signup_btn {
+    display: flex;
+    justify-content: center;
+}
+
+.signup {
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-color: #896AC9;
+    margin-left: -150px;
+}
+
+.login {
+    color: #A5ADB2;
+}

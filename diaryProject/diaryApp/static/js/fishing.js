@@ -62,3 +62,13 @@ const fishingHandler = () => {
         astronaunt.src = "http://localhost:8000/static/img/LV1_fishing.svg";
     }
 };
+
+const getToday = () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+    const date = today.getDate();
+
+    document.querySelector('.random-diary-header span').innerHTML = `${year}년 ${month}월 ${date}일`;
+}
+getToday();
