@@ -9,7 +9,11 @@
     align-items: center;
 }
 
-
+.navigator {
+    position: absolute;
+    top: 50px;
+    left: 300px;
+}
 .astro {
     height: 50%;
     width: 100%;
@@ -92,6 +96,10 @@
     margin-top: 5px;
     margin-left: 20px;
     font-size: 21px;
+}
+.random-diary-header p {
+    margin-left: 20px;
+    font-size: 18px;
 }
 .random-diary-content {
     height: 500.5px;

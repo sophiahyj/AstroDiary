@@ -20,5 +20,6 @@ from django.conf import settings
 
 urlpatterns = [
 
-    path('', MyPage.views.mypage, name='mypage'),
+    path('main', MyPage.views.MainMypage, name='mypage'),
+    path('<int:YearLooking>/<int:MonthLooking>', MyPage.views.calendar, name='calendar'),
 ]

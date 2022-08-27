@@ -13,10 +13,11 @@
 .profile {
     width: 100px;
     height: 100px;
-    border-radius: 100%; 
-    border: 10px solid #fadc72;   
+    border-radius: 100%;
+    border: 10px solid #fadc72;
     background-color: white;
     margin-left: 40px;
+    margin-top: 10%;
 }
 
 .name-wrap {
@@ -31,6 +32,7 @@
 }
 
 .level-name {
+    margin-top: 5%;
     background-color: #fadc72;
     padding: 4px 4px;
     border-radius: 10px;
@@ -44,18 +46,16 @@
     flex-direction: row;
 }
 
-
 .fishing-bag > img {
-    margin-top: 0%;
+    margin-top: 10%;
     margin-left: 20px;
-    width: 85%;
+    width: 50%;
     height: 90%;
 }
 
 .calendar {
     width: 90%;
-    margin: 0px auto;
-    height: 40%;
+    margin: 5% auto;
     background-color: rgba(255, 255, 255, 0.384);
     border-radius: 10px;
 }
@@ -85,10 +85,9 @@
     margin: 0px auto;
 }
 
-
 .main-btn img {
     position: absolute;
-    width: 100%; 
+    width: 100%;
     height: 140%;
     margin: 0px auto;
 }
@@ -99,7 +98,6 @@
     height: 140%;
     margin: 0px auto;
     opacity: 60%;
-    
 }
 
 .flex-col {
@@ -115,7 +113,6 @@
 }
 
 .calendar_nav {
-
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -149,14 +146,16 @@
     font-size: 20px;
 }
 
-
 .monthly-total {
     position: relative;
-    margin-top: 5%;
-    width: 90%;
-    height: 60%;
+    width: 100%;
+    height: 55%;
     background-color: white;
     border-radius: 10px;
-    margin-right: 20px;
+    margin-right: 10%;
     position: relative;
+}
+
+.fishing-rod > img {
+    bottom: 30px;
 }

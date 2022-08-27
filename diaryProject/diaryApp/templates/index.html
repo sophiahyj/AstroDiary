@@ -13,8 +13,8 @@
         <input id="username" value={{user.username}} style="display:none;"></input>
         <span class="navbar_menu_item" style="font-family: 'Noto Serif KR', serif;">안녕하세요, {{user.username}} 님!</span>
         <div class="links">
-          <a href="{% url 'logout' %}" style="font-family: 'Noto Serif KR', serif; color: white;" class="logouthref">Logout</a>
           <a href="{% url 'mypage' %}" style="font-family: 'Noto Serif KR', serif; color: white;">MyPage</a>
+          <a href="{% url 'logout' %}" style="font-family: 'Noto Serif KR', serif; color: white;" class="logouthref">Logout</a>
         </div>
 
     </div>
@@ -102,9 +102,6 @@
         </div>
       <div class="btn_register">
         <button type="button" onclick="location.href='{% url 'login' %}'">Login</button>
-        {% comment %} <br>
-        <br>
- {% endcomment %}
       </div>
       {% endif %}
     </div>
